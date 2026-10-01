@@ -1,63 +1,54 @@
-# 📌 Checklist da Aula 1
+# Atividade 1 — Checklist da Aula 1
 
-Antes de avançar para a próxima aula, verifique se você consegue explicar:
+## 1. Alfabeto Σ
+Um alfabeto é um conjunto finito e não vazio de símbolos.
 
-* [ ] O que é um **alfabeto `Σ`**:?
+Exemplo:
+Σ = {a, b}
 
-Σ é um conjunto de símbolos.
+## 2. Cadeia
+Uma cadeia é uma sequência finita de símbolos pertencentes a um alfabeto.
 
-* [ ] O que é uma **cadeia**:?
+Exemplo:
+w = abba
 
-Cadeia é o conjunto de símbolos gerando uma palavra.
+## 3. Palavra vazia ε
+ε representa a cadeia que não possui nenhum símbolo.
 
-* [ ] O que significa **`ε`**:?
+Seu comprimento é:
+|ε| = 0
 
-Uma cadeia vazia que não possui símbolos.
+## 4. Prefixo e sufixo
+Para uma palavra w, um prefixo é obtido pegando uma parte inicial de w.
+Um sufixo é obtido pegando uma parte final de w.
 
-* [ ] Por que **`|ε| = 0`**:?
+Para w = ab:
+- Prefixos: ε, a, ab
+- Sufixos: ε, b, ab
 
-Porque ε é uma cadeia com 0 símbolos e usamos |ε| para retornar o numero de símbolos da cadeia.
+## 5. Σ*
+Σ* é o conjunto de todas as cadeias finitas que podem ser formadas com símbolos de Σ, incluindo ε.
 
-* [ ] O que é um **prefixo**:?
+## 6. Linguagem formal
+Uma linguagem formal é qualquer subconjunto de Σ*.
 
-Prefixo é o símbolo inicial que antecede todos outros na cadeia.
+Portanto:
+L ⊆ Σ*
 
-* [ ] O que é um **sufixo**:?
+## 7. Gramática formal
+Uma gramática formal pode ser representada por:
+G = (V, Σ, P, S)
 
-É o símbolo final da cadeia.
+onde:
+- V = conjunto de símbolos não terminais;
+- Σ = conjunto de símbolos terminais;
+- P = conjunto de regras de produção;
+- S = símbolo inicial.
 
-* [ ] O que significa **`Σ*`**:?
+## 8. Exemplo de produção
+S → aS | ε
 
-É todas cadeias infinitas possíveis geradas.
+Essa gramática gera:
+ε, a, aa, aaa, ...
 
-* [ ] Se `Σ*` possui limite de tamanho:?
-
-Σ* é infinito.
-
-* [ ] O que é uma **linguagem formal `L`**:?
-
-É o produto de palavras validadas por um automato que checa as palavras dentro de Σ*.
-
-* [ ] O que significa **`L ⊆ Σ*`**:?
-
-As palavras validadas da linguagem não estao contidas nas cadeias infinitas geradas por Σ*.
-
-* [ ] O que é uma **gramática formal**:?
-
-É oque fornece as regras para gerar palavras.
-
-* [ ] O que são **terminais e não terminais**:?
-
-Terminais são os simbolos finais da palavras, não terminal é o simbolo inicial.
-
-* [ ] O que é uma **regra de produção**:?
-
-É a regra estabelecida pela gramatica onde a palavra deve obedecer essa regra para ser validada.
-
-* [ ] Como ler **`S → aS | ε`**:?
-
-simbolo não terminal produz simbolo a seguido de simbolo não terminal, ou produz uma cadeia vazia.
-
-* [ ] Como gerar palavras usando uma gramática:?
-
-G = (N, Σ, P, S). Gramatica = (Não terminais, Terminais, Produções, Simbolo Inicial).
+Logo, ela gera palavras formadas somente por a.

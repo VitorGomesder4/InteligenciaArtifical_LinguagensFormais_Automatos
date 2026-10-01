@@ -1,1 +1,34 @@
-Expressão a ser testada no regex: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+# Atividade — Expressões Regulares
+
+## Validação de e-mail
+
+### Expressão regular
+
+```regex
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+```
+
+### Explicação
+
+- `^` — início da cadeia.
+- `[a-zA-Z0-9._%+-]+` — uma ou mais letras, números ou caracteres permitidos antes do `@`.
+- `@` — separador obrigatório.
+- `[a-zA-Z0-9.-]+` — domínio.
+- `\.` — ponto literal.
+- `[a-zA-Z]{2,}` — extensão com pelo menos duas letras.
+- `$` — final da cadeia.
+
+### Casos válidos
+
+- maria@gmail.com
+- joao.silva@udf.edu.br
+- estudante_01@faculdade.com
+
+### Casos inválidos
+
+- pedro.gmail.com — não possui `@`.
+- ana@dominio — não possui extensão após o ponto.
+
+### Observação
+
+A expressão atende aos exemplos propostos. Ela é uma validação didática de formato e não pretende implementar todas as regras possíveis de endereços de e-mail reais.

@@ -1,307 +1,87 @@
-## Exercício 1
+# Atividade 2 — Exercícios de Linguagens Formais e Gramáticas
 
+## 1. Alfabeto {a,b,c}
+Um exemplo de alfabeto é:
+Σ = {a, b, c}
+
+Algumas palavras pertencentes a Σ*:
+ε, a, b, c, ab, abc, cba, aaac.
+
+## 2. Palavras válidas sobre {0,1}
+Considerando:
+Σ = {0,1}
+
+São válidas todas as cadeias formadas somente por 0 e 1, incluindo ε.
+
+Exemplos:
+ε, 0, 1, 00, 01, 101, 1100.
+
+## 3. Pertinência em Σ e Σ*
+Se Σ = {a,b}, então:
+- a ∈ Σ
+- b ∈ Σ
+- ab ∈ Σ*
+- aba ∈ Σ*
+- c ∉ Σ
+- ac ∉ Σ*
+
+Uma cadeia com mais de um símbolo normalmente pertence a Σ*, não diretamente a Σ.
+
+## 4. Pertinência em uma linguagem
+Se:
+L = {a, ab, abb, abbb}
+
+então:
+- a ∈ L
+- ab ∈ L
+- abb ∈ L
+- b ∉ L
+- aa ∉ L
+
+## 5. Linguagem L = {bⁿ | n ≥ 1}
+As palavras da linguagem são:
+b, bb, bbb, bbbb, ...
+
+A palavra vazia ε não pertence a L porque n deve ser maior ou igual a 1.
+
+## 6. Diferença entre ∅ e {ε}
+- ∅ é a linguagem vazia: não contém nenhuma palavra.
+- {ε} contém exatamente uma palavra: a palavra vazia ε.
+
+Portanto:
+|∅| = 0
+|{ε}| = 1
+
+## 7. Componentes de uma gramática
+Para:
+G = (V, Σ, P, S)
+
+temos:
+- V: não terminais;
+- Σ: terminais;
+- P: produções;
+- S: símbolo inicial.
+
+## 8. Derivação usando S → 0S
 Considere:
+S → 0S | ε
 
-$$
-\Sigma = {a,b,c}
-$$
+Podemos gerar:
+S ⇒ 0S ⇒ 00S ⇒ 000S ⇒ 000
 
-Responda:
+Portanto, 000 é gerada pela gramática.
 
-1. Quantos símbolos existem no alfabeto?
+## 9. Derivação de aaab
+Uma gramática possível para gerar palavras da forma aⁿb é:
 
-    3
+S → aS | b
 
-2. Quais são os símbolos?
+Então:
+S ⇒ aS ⇒ aaS ⇒ aaaS ⇒ aaab
 
-    a,b,c.
+Logo, aaab pode ser gerada.
 
-3. O símbolo `a` pertence ao alfabeto?
+## 10. Verificação de palavras
+Para verificar se uma palavra pode ser gerada por uma gramática, devemos iniciar em S e aplicar as regras de produção até chegar exatamente à palavra analisada.
 
-    Sim.
-
-4. O símbolo `d` pertence ao alfabeto?
-
-    Não.
-
-5. Escreva uma palavra formada por símbolos desse alfabeto.
-
-    babaca.
-
----
-
-## Exercício 2
-
-Considere:
-
-$$
-\Sigma = {0,1}
-$$
-
-Classifique cada sequência como **palavra válida** ou **não válida** e justifique sua resposta:
-
-| Sequência | Válida? |          Justificativa                  |
-| --------- | ------- | ----------------------------------------|
-| `0101`    |   SIM   |   Simbolos contidas no alfabeto         |
-| `00110`   |   SIM   |   Simbolos contidas no alfabeto         |
-| `012`     |   NÃO   |   Simbolo "2" não contido no alfabeto   |
-| `111`     |   SIM   |   Simbolos contidas no alfabeto         |
-| `10a`     |   NÃO   |   Simbolo "a" não contido no alfabeto   |
-
----
-
-## Exercício 3
-
-Considere:
-
-$$
-\Sigma = {0,1}
-$$
-
-Determine se as afirmações são **verdadeiras ou falsas** e justifique cada resposta:
-
-1. $0 \in \Sigma$
-
-    TRUE
-
-2. $1 \in \Sigma$
-
-    TRUE
-
-3. $01 \in \Sigma$
-
-    FALSE
-
-4. $01 \in \Sigma^*$
-
-    TRUE
-
-5. $2 \in \Sigma$
-
-    FALSE
-
-6. $101 \in \Sigma^*$
-
-    TRUE
-
----
-
-## Exercício 4
-
-Considere:
-
-$$
-L = {0,01,011,0111}
-$$
-
-Determine se cada palavra pertence à linguagem:
-
-1. $0 \in L$
-
-    SIM
-
-2. $01 \in L$
-
-    SIM
-
-3. $0111 \in L$
-
-    SIM
-
-4. $10 \in L$
-
-    NÃO
-
-5. $111 \in L$
-
-    SIM
-
-6. $011 \in L$
-
-    SIM
-
----
-
-## Exercício 5
-
-Considere:
-
-$$
-L = {b^n \mid n \geq 1}
-$$
-
-Responda:
-
-1. Escreva as cinco primeiras palavras.
-
-    {b,bb,bbb,bbbb,bbbbb}
-
-2. Explique o significado de $b^n$.
-
-    b repetido n vezes
-
-3. A palavra `bbbbbb` pertence à linguagem?
-
-    SIM
-
-4. A palavra vazia ($\varepsilon$) pertence à linguagem?
-
-    NÃO pois n > 1
-
----
-
-## Exercício 6
-
-Explique, com suas próprias palavras, a diferença entre:
-
-### A
-
-$$
-L=\emptyset
-$$
-
-    É uma linguagem onde o conjunto de palavras é nula
-
-### B
-
-$$
-L={\varepsilon}
-$$
-
-    É uma linguagem onde a unica palavra é ε
-
-Depois responda:
-
-1. Qual delas possui uma palavra?
-
-    L=ε
-
-2. Qual delas não possui nenhuma palavra?
-
-    L=∅
-
-3. Qual é o comprimento da palavra $\varepsilon$?
-    0
-
-
-
-
----
-
-## Exercício 7
-
-Considere:
-
-$$
-G= ({S,A},{0,1},P,S)
-$$
-
-com:
-
-$$
-P={S\rightarrow0A,\ A\rightarrow1}
-$$
-
-Identifique:
-
-1. O conjunto de variáveis.
-
-    {S, A}
-
-2. O conjunto de terminais.
-
-    {0, 1}
-
-3. O conjunto de produções.
-
-    P = {S→0A, A→1}
-
-4. O símbolo inicial.
-
-    S
-
-5. Qual palavra pode ser gerada por essa gramática?
-
-    S→0A→01
-
-
----
-
-## Exercício 8
-
-Considere:
-
-$$
-S\rightarrow0S
-$$
-
-Começando com $S$:
-
-1. Aplique a regra uma vez.
-
-    S→0S
-
-2. Aplique a regra duas vezes.
-
-    S→0S→00S
-
-3. Aplique a regra três vezes.
-
-    S→0S→00S→000S
-
-4. Escreva a sequência completa de derivação.
-
-    S→0S→00S→000S→...
-
-
----
-
-## Exercício 9
-
-Utilizando:
-
-$$
-G:
-\begin{cases}
-S\rightarrow aS\\
-S\rightarrow b
-\end{cases}
-$$
-
-Gere:
-
-$$
-aaab
-$$
-
-Escreva todos os passos da derivação.
-
-S→aS
-\(aS \rightarrow aaS\)
-\(aaS \rightarrow aaaS\)
-aaaS→aaab
-
----
-
-## Exercício 10
-
-Considere:
-
-$$
-G:
-\begin{cases}
-S\rightarrow0S\\
-S\rightarrow1
-\end{cases}
-$$
-
-Determine se cada palavra pode ser gerada:
-
-1. `1`: SIM
-2. `01`: SIM
-3. `001`: SIM
-4. `0001`: SIM
-5. `101`: NÃO
-6. `1001`: NÃO
-
-Para as palavras que podem ser geradas, apresente a derivação completa.
+Uma palavra pertence à linguagem da gramática quando existe pelo menos uma derivação que começa em S e termina nessa palavra.
